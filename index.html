@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PT Gym - Pemesanan Program (1 Hari / 1 Minggu / 1 Bulan)</title>
+  <meta name="description" content="Jasa pemesanan program PT Gym 1 hari, 1 minggu, dan 1 bulan dengan kategori bulking, cutting, dan recomp. Chat WhatsApp langsung." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <div class="brand">
+        <div class="brand__mark" aria-hidden="true">PT</div>
+        <div>
+          <div class="brand__name">PT Gym</div>
+          <div class="brand__tag">Pemesanan Program Online</div>
+        </div>
+      </div>
+
+      <a
+        class="btn btn--primary topbar__wa"
+        id="waTop"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Chat WA
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <h1>Program Bulking • Cutting • Recomp</h1>
+          <p>
+            Pilih paket <b>1 Hari</b>, <b>1 Minggu</b>, atau <b>1 Bulan</b> lalu pilih kategori.
+            Setelah itu langsung <b>chat WhatsApp</b> untuk konfirmasi.
+          </p>
+
+          <div class="hero__bullets" role="list">
+            <div class="bullet" role="listitem">✓ Rencana latihan</div>
+            <div class="bullet" role="listitem">✓ Panduan nutrisi</div>
+            <div class="bullet" role="listitem">✓ Dukungan update progres</div>
+          </div>
+
+          <div class="hero__note">
+            <span class="pill">Respon cepat</span>
+            <span class="pill pill--ghost">Tanpa Laravel (HTML/CSS/JS)</span>
+          </div>
+        </div>
+
+        <div class="hero__card" aria-label="Form Pemesanan">
+          <form id="orderForm" class="form" autocomplete="on">
+            <div class="form__row">
+              <label class="label" for="paket">Paket</label>
+              <select id="paket" name="paket" required>
+                <option value="1_hari">1 Hari</option>
+                <option value="1_minggu" selected>1 Minggu</option>
+                <option value="1_bulan">1 Bulan</option>
+              </select>
+            </div>
+
+            <div class="form__row">
+              <label class="label" for="kategori">Kategori</label>
+              <select id="kategori" name="kategori" required>
+                <option value="bulking" selected>Bulking</option>
+                <option value="cutting">Cutting</option>
+                <option value="recomp">Recomp</option>
+              </select>
+            </div>
+
+            <div class="grid2">
+              <div class="form__row">
+                <label class="label" for="nama">Nama</label>
+                <input id="nama" name="nama" type="text" placeholder="Contoh: Andi" maxlength="40" required />
+              </div>
+
+              <div class="form__row">
+                <label class="label" for="usia">Usia</label>
+                <input id="usia" name="usia" type="number" placeholder="Contoh: 20" min="10" max="90" required />
+              </div>
+            </div>
+
+            <div class="grid2">
+              <div class="form__row">
+                <label class="label" for="tinggi">Tinggi (cm)</label>
+                <input id="tinggi" name="tinggi" type="number" placeholder="Contoh: 170" min="120" max="220" required />
+              </div>
+              <div class="form__row">
+                <label class="label" for="berat">Berat (kg)</label>
+                <input id="berat" name="berat" type="number" placeholder="Contoh: 65" min="30" max="200" required />
+              </div>
+            </div>
+
+            <div class="form__row">
+              <label class="label" for="goal">Catatan / Target (opsional)</label>
+              <textarea id="goal" name="goal" rows="3" placeholder="Contoh: Mau fokus naikin massa otot sambil jaga strength..."></textarea>
+            </div>
+
+            <div class="pricebar" aria-live="polite">
+              <div class="pricebar__item">
+                <div class="pricebar__label">Estimasi paket</div>
+                <div class="pricebar__value" id="estimasi">—</div>
+              </div>
+              <div class="pricebar__item">
+                <div class="pricebar__label">Slot</div>
+                <div class="pricebar__value" id="slot">Tersedia</div>
+              </div>
+            </div>
+
+            <div class="form__actions">
+              <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+                Chat Konfirmasi di WhatsApp
+              </button>
+              <button type="button" class="btn btn--ghost btn--full" id="btnPreview">
+                Preview Pesan
+              </button>
+            </div>
+
+            <div class="preview" id="previewBox" hidden>
+              <div class="preview__title">Preview Pesan</div>
+              <pre class="preview__text" id="previewText"></pre>
+              <div class="preview__hint">Jika sudah benar, klik tombol utama untuk membuka WhatsApp.</div>
+            </div>
+
+            <div class="fineprint">
+              Dengan mengirim chat, kamu setuju untuk dihubungi admin terkait pemesanan.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section">
+      <h2 class="section__title">Detail Paket</h2>
+      <div class="cards" role="list">
+        <article class="card" role="listitem">
+          <div class="card__head">1 Hari</div>
+          <div class="card__body">
+            <ul class="list">
+              <li>Evaluasi awal & arahan latihan</li>
+              <li>Rencana ringkas sesuai kategori</li>
+              <li>1x update via chat</li>
+            </ul>
+          </div>
+          <div class="card__foot"><span class="tag">Cocok untuk starter</span></div>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="card__head">1 Minggu</div>
+          <div class="card__body">
+            <ul class="list">
+              <li>Program latihan terstruktur</li>
+              <li>Guidance nutrisi & tracking</li>
+              <li>2–3x update progres</li>
+            </ul>
+          </div>
+          <div class="card__foot"><span class="tag tag--green">Paling populer</span></div>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="card__head">1 Bulan</div>
+          <div class="card__body">
+            <ul class="list">
+              <li>Periodisasi program (adaptif)</li>
+              <li>Kontrol progres & penyesuaian</li>
+              <li>Update lebih intens</li>
+            </ul>
+          </div>
+          <div class="card__foot"><span class="tag tag--blue">Hasil maksimal</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section section--faq">
+      <h2 class="section__title">Cara Pemesanan</h2>
+      <ol class="steps">
+        <li>Pilih paket (1 Hari / 1 Minggu / 1 Bulan)</li>
+        <li>Pilih kategori (Bulking / Cutting / Recomp)</li>
+        <li>Isi data (nama, usia, tinggi, berat)</li>
+        <li>Klik tombol untuk chat WhatsApp dan admin akan konfirmasi</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <div class="footer__brand">PT Gym</div>
+        <div class="footer__small">© <span id="year"></span> Semua hak dilindungi.</div>
+      </div>
+      <a class="btn btn--ghost" href="#" id="waFooter" target="_blank" rel="noopener noreferrer">Chat WA +6285792177153</a>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="./script.js"></script>
+</body>
+</html>
+
+
