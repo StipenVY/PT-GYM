@@ -60,7 +60,7 @@
     const g = (goal.value || '').trim();
 
     return [
-      'Halo PT Gym 👋',
+      'Halo PT Gym',
       'Saya ingin pesan program:',
       `- Paket: ${pLabel}`,
       `- Kategori: ${kLabel}`,
