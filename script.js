@@ -26,9 +26,9 @@
 
   const pricing = {
     // estimasi harga (contoh). Bisa diganti sesuai kebutuhan.
-    '1_hari': { bulking: 120000, cutting: 120000, recomp: 150000, slot: 'Tersisa 8 slot' },
-    '1_minggu': { bulking: 550000, cutting: 550000, recomp: 650000, slot: 'Tersisa 5 slot' },
-    '1_bulan': { bulking: 1900000, cutting: 1900000, recomp: 2200000, slot: 'Tersisa 2 slot' },
+    '1_hari': { bulking: 50000, cutting: 50000, recomp: 65000, slot: 'Tersisa 8 slot' },
+    '1_minggu': { bulking: 300000, cutting: 300000, recomp: 450000, slot: 'Tersisa 5 slot' },
+    '1_bulan': { bulking: 900000, cutting: 900000, recomp: 1000000, slot: 'Tersisa 2 slot' },
   };
 
   const formatIDR = (n) => {
